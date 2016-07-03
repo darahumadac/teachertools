@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3D9362C9-8056-456F-9D49-7BD14A51C52D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeacherTools</RootNamespace>
+    <AssemblyName>TeacherTools</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\BaseMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BaseMainScreen.Designer.cs">
+      <DependentUpon>BaseMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ClassListScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClassListScreen.Designer.cs">
+      <DependentUpon>ClassListScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\IMainView.cs" />
+    <Compile Include="Forms\IRecordManager.cs" />
+    <Compile Include="Forms\StudentInfoScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentInfoScreen.Designer.cs">
+      <DependentUpon>StudentInfoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainMenuScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainMenuScreen.Designer.cs">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607030315583_RemovedNameEncapsulation.cs" />
+    <Compile Include="Migrations\201607030315583_RemovedNameEncapsulation.Designer.cs">
+      <DependentUpon>201607030315583_RemovedNameEncapsulation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\DataRepository.cs" />
+    <Compile Include="TeacherToolsResource.en.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeacherToolsResource.en.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\GlobalConstants.cs" />
+    <Compile Include="Utils\InputValidator.cs" />
+    <Compile Include="Migrations\201606211224032_Added Name Field.cs" />
+    <Compile Include="Migrations\201606211224032_Added Name Field.Designer.cs">
+      <DependentUpon>201606211224032_Added Name Field.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Name.cs" />
+    <Compile Include="Forms\StudentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentScreen.Designer.cs">
+      <DependentUpon>StudentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\IRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Migrations\201606160901269_InitialCreate.cs" />
+    <Compile Include="Migrations\201606160901269_InitialCreate.Designer.cs">
+      <DependentUpon>201606160901269_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201606161313284_AddedUniqueIXtoStudentNum.cs" />
+    <Compile Include="Migrations\201606161313284_AddedUniqueIXtoStudentNum.Designer.cs">
+      <DependentUpon>201606161313284_AddedUniqueIXtoStudentNum.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\SqlRepository.cs" />
+    <Compile Include="Models\Student.cs" />
+    <Compile Include="Repositories\StudentManager.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Repositories\TeacherToolsDbContext.cs" />
+    <EmbeddedResource Include="Forms\BaseMainScreen.resx">
+      <DependentUpon>BaseMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentInfoScreen.resx">
+      <DependentUpon>StudentInfoScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainMenuScreen.resx">
+      <DependentUpon>MainMenuScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606211224032_Added Name Field.resx">
+      <DependentUpon>201606211224032_Added Name Field.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentScreen.resx">
+      <DependentUpon>StudentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606160901269_InitialCreate.resx">
+      <DependentUpon>201606160901269_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201606161313284_AddedUniqueIXtoStudentNum.resx">
+      <DependentUpon>201606161313284_AddedUniqueIXtoStudentNum.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607030315583_RemovedNameEncapsulation.resx">
+      <DependentUpon>201607030315583_RemovedNameEncapsulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TeacherToolsResource.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>TeacherToolsResource.en.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="img\Student-80px.png" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="img\Student-100px.png" />
+    <Content Include="img\Student-50px.png" />
+    <Content Include="img\Student.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
