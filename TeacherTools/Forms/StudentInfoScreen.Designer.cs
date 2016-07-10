@@ -53,6 +53,10 @@ namespace TeacherTools.Forms
             this.lastNameError = new System.Windows.Forms.ErrorProvider(this.components);
             this.gradeLevelError = new System.Windows.Forms.ErrorProvider(this.components);
             this.sectionError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.birthdatePicker = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.genderDropdown = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.gradeLevelNum)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -80,9 +84,9 @@ namespace TeacherTools.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.studentNoTxt.Location = new System.Drawing.Point(109, 16);
             this.studentNoTxt.Name = "studentNoTxt";
-            this.studentNoTxt.Size = new System.Drawing.Size(136, 20);
+            this.studentNoTxt.Size = new System.Drawing.Size(133, 20);
             this.studentNoTxt.TabIndex = 10;
-            this.studentNoTxt.Validating +=studentNoTxt_Validating;
+            this.studentNoTxt.Validating += studentNoTxt_Validating;
             // 
             // label2
             // 
@@ -109,7 +113,7 @@ namespace TeacherTools.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.firstNameTxt.Location = new System.Drawing.Point(79, 20);
             this.firstNameTxt.Name = "firstNameTxt";
-            this.firstNameTxt.Size = new System.Drawing.Size(151, 20);
+            this.firstNameTxt.Size = new System.Drawing.Size(148, 20);
             this.firstNameTxt.TabIndex = 12;
             this.firstNameTxt.Validating +=firstNameTxt_Validating;
             // 
@@ -129,9 +133,9 @@ namespace TeacherTools.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.middleNameTxt.Location = new System.Drawing.Point(79, 53);
             this.middleNameTxt.Name = "middleNameTxt";
-            this.middleNameTxt.Size = new System.Drawing.Size(151, 20);
+            this.middleNameTxt.Size = new System.Drawing.Size(148, 20);
             this.middleNameTxt.TabIndex = 13;
-            this.middleNameTxt.Validating +=middleNameTxt_Validating;
+            this.middleNameTxt.Validating += middleNameTxt_Validating;
             // 
             // lastNameTxt
             // 
@@ -140,7 +144,7 @@ namespace TeacherTools.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lastNameTxt.Location = new System.Drawing.Point(79, 87);
             this.lastNameTxt.Name = "lastNameTxt";
-            this.lastNameTxt.Size = new System.Drawing.Size(151, 20);
+            this.lastNameTxt.Size = new System.Drawing.Size(148, 20);
             this.lastNameTxt.TabIndex = 14;
             this.lastNameTxt.Validating += lastNameTxt_Validating;
             // 
@@ -171,7 +175,7 @@ namespace TeacherTools.Forms
             this.sectionTxt.Name = "sectionTxt";
             this.sectionTxt.Size = new System.Drawing.Size(132, 20);
             this.sectionTxt.TabIndex = 19;
-            this.sectionTxt.Validating +=sectionTxt_Validating;
+            this.sectionTxt.Validating += sectionTxt_Validating;
             // 
             // gradeLevelNum
             // 
@@ -184,17 +188,29 @@ namespace TeacherTools.Forms
             0,
             0,
             0});
+            this.gradeLevelNum.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.gradeLevelNum.Name = "gradeLevelNum";
             this.gradeLevelNum.Size = new System.Drawing.Size(52, 20);
             this.gradeLevelNum.TabIndex = 20;
-            this.gradeLevelNum.Minimum = 1;
-            this.gradeLevelNum.Value = 1;
+            this.gradeLevelNum.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.genderDropdown);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.birthdatePicker);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.lastNameTxt);
             this.groupBox1.Controls.Add(this.middleNameTxt);
@@ -203,7 +219,7 @@ namespace TeacherTools.Forms
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(15, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 130);
+            this.groupBox1.Size = new System.Drawing.Size(251, 188);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Basic Information";
@@ -214,7 +230,7 @@ namespace TeacherTools.Forms
             this.groupBox2.Controls.Add(this.gradeLevelNum);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.sectionTxt);
-            this.groupBox2.Location = new System.Drawing.Point(15, 191);
+            this.groupBox2.Location = new System.Drawing.Point(13, 246);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(254, 90);
             this.groupBox2.TabIndex = 23;
@@ -224,7 +240,7 @@ namespace TeacherTools.Forms
             // addStudentBtn
             // 
             this.addStudentBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.addStudentBtn.Location = new System.Drawing.Point(194, 290);
+            this.addStudentBtn.Location = new System.Drawing.Point(191, 352);
             this.addStudentBtn.Name = "addStudentBtn";
             this.addStudentBtn.Size = new System.Drawing.Size(75, 23);
             this.addStudentBtn.TabIndex = 24;
@@ -234,13 +250,13 @@ namespace TeacherTools.Forms
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(17, 290);
+            this.cancelBtn.Location = new System.Drawing.Point(17, 352);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 25;
             this.cancelBtn.Text = "Cancel";
             this.cancelBtn.UseVisualStyleBackColor = true;
-            this.cancelBtn.Click +=  cancelBtn_Click;
+            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click); 
             // 
             // studentNumError
             // 
@@ -272,11 +288,54 @@ namespace TeacherTools.Forms
             this.sectionError.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.sectionError.ContainerControl = this;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(8, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "Birthdate";
+            // 
+            // birthdatePicker
+            // 
+            this.birthdatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.birthdatePicker.Location = new System.Drawing.Point(76, 124);
+            this.birthdatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.birthdatePicker.Name = "birthdatePicker";
+            this.birthdatePicker.Size = new System.Drawing.Size(105, 20);
+            this.birthdatePicker.TabIndex = 19;
+            this.birthdatePicker.Value = new System.DateTime(2016, 7, 10, 15, 8, 21, 0);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(8, 153);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(42, 13);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Gender";
+            // 
+            // genderDropdown
+            // 
+            this.genderDropdown.FormattingEnabled = true;
+            this.genderDropdown.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
+            this.genderDropdown.Location = new System.Drawing.Point(76, 151);
+            this.genderDropdown.MaxDropDownItems = 2;
+            this.genderDropdown.MaxLength = 2;
+            this.genderDropdown.Name = "genderDropdown";
+            this.genderDropdown.Size = new System.Drawing.Size(105, 21);
+            this.genderDropdown.Sorted = true;
+            this.genderDropdown.TabIndex = 21;
+            this.genderDropdown.Text = "Female";
+            // 
             // StudentInfoScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 325);
+            this.ClientSize = new System.Drawing.Size(281, 387);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.addStudentBtn);
             this.Controls.Add(this.groupBox2);
@@ -299,7 +358,6 @@ namespace TeacherTools.Forms
             ((System.ComponentModel.ISupportInitialize)(this.sectionError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-            
 
         }
         
@@ -328,5 +386,9 @@ namespace TeacherTools.Forms
         private System.Windows.Forms.ErrorProvider lastNameError;
         private System.Windows.Forms.ErrorProvider gradeLevelError;
         private System.Windows.Forms.ErrorProvider sectionError;
+        private System.Windows.Forms.ComboBox genderDropdown;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DateTimePicker birthdatePicker;
+        private System.Windows.Forms.Label label7;
     }
 }

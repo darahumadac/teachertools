@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201607030315583_RemovedNameEncapsulation.Designer.cs">
       <DependentUpon>201607030315583_RemovedNameEncapsulation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.cs" />
+    <Compile Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.Designer.cs">
+      <DependentUpon>201607100658120_AddGenderAndBirthdateForStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="TeacherToolsResource.en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -128,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607030315583_RemovedNameEncapsulation.resx">
       <DependentUpon>201607030315583_RemovedNameEncapsulation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.resx">
+      <DependentUpon>201607100658120_AddGenderAndBirthdateForStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

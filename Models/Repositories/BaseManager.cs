@@ -30,5 +30,10 @@ namespace Models.Repositories
         {
             return Repository.GetAll();
         }
+
+        public int TotalRecordCount
+        {
+            get { return GetAllRecords().Count; }
+        }
     }
 }

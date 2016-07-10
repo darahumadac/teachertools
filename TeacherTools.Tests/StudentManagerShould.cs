@@ -32,7 +32,9 @@ namespace TeacherTools.Tests
                 LastName = lastName,
                 GradeLevel = gradeLevel,
                 Section = section,
-                StudentNumber = Guid.NewGuid().ToString().Substring(0, 10)
+                StudentNumber = Guid.NewGuid().ToString().Substring(0, 10),
+                Gender = "Female",
+                BirthDate = new DateTime(1992, 6, 28)
             };
 
             if (!isStudentExisting(student.StudentNumber))

@@ -70,6 +70,8 @@ namespace TeacherTools.Forms
             lastNameTxt.Text = student.LastName;
             gradeLevelNum.Value = student.GradeLevel;
             sectionTxt.Text = student.Section;
+            genderDropdown.SelectedItem = student.Gender;
+            birthdatePicker.Value = student.BirthDate;
         }
 
 
@@ -100,9 +102,14 @@ namespace TeacherTools.Forms
 
                 if (dialogResult == DialogResult.OK)
                 {
-                    _student = new Student(studentNoTxt.Text, firstNameTxt.Text,
-                    lastNameTxt.Text, middleNameTxt.Text,
-                    (int)gradeLevelNum.Value, sectionTxt.Text);
+                    _student = new Student(studentNoTxt.Text,
+                        firstNameTxt.Text,
+                        lastNameTxt.Text,
+                        middleNameTxt.Text,
+                        (int) gradeLevelNum.Value,
+                        sectionTxt.Text,
+                        genderDropdown.SelectedItem.ToString(), 
+                        birthdatePicker.Value.Date);
 
                     AddStudent(_student);
                 }
@@ -118,6 +125,8 @@ namespace TeacherTools.Forms
                 _student.LastName = lastNameTxt.Text;
                 _student.GradeLevel = (int)gradeLevelNum.Value;
                 _student.Section = sectionTxt.Text;
+                _student.BirthDate = birthdatePicker.Value;
+                _student.Gender = genderDropdown.SelectedItem.ToString();
 
                 UpdateStudent(_student);
             }

@@ -53,7 +53,9 @@ namespace TeacherTools.Tests
                 LastName = "LastNameStudent",
                 GradeLevel = 12,
                 Section = "Section 12",
-                StudentNumber = Guid.NewGuid().ToString().Substring(0,10)
+                StudentNumber = Guid.NewGuid().ToString().Substring(0,10),
+                Gender = "Female",
+                BirthDate = new DateTime(1992, 6, 28)
             };
 
             _appDbContext.Students.Add(testStudent);
@@ -80,7 +82,7 @@ namespace TeacherTools.Tests
             string newStudentNumber = new Guid().ToString().Substring(0,10);
 
             var newStudent = new Student(newStudentNumber, 
-                "Darah", "Umadac", "Francisco", 12, "Belardo");
+                "Darah", "Umadac", "Francisco", 12, "Belardo", "Female", new DateTime(1992, 6, 28));
             _sqlRepository.Add(newStudent);
 
             var retrievedStudent = _appDbContext.Students.FirstOrDefault(s => s.StudentNumber == newStudentNumber);

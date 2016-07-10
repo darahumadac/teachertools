@@ -100,7 +100,7 @@
             this.batchInfoSearchGroupBox.Size = new System.Drawing.Size(224, 81);
             this.batchInfoSearchGroupBox.TabIndex = 2;
             this.batchInfoSearchGroupBox.TabStop = false;
-            this.batchInfoSearchGroupBox.Text = "Batch Information";
+            this.batchInfoSearchGroupBox.Text = "Class Information";
             // 
             // label6
             // 

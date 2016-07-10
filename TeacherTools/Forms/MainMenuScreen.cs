@@ -37,7 +37,7 @@ namespace TeacherTools.Forms
             studentMainScreen.Show();
         }
 
-        private void classListMenuBtn_Click(object sender, EventArgs e)
+        private void classRecordMenuBtn_Click(object sender, EventArgs e)
         {
 
         }

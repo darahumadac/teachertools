@@ -27,7 +27,9 @@ namespace TeacherTools.Migrations
                                         i + "surname",
                                         "middleName" + i,
                                         i,
-                                        "Section " + i)
+                                        "Section " + i,
+                                        "Female",
+                                        new DateTime(1992, 6, 28))
                     );
             }
 

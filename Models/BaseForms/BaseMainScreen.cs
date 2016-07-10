@@ -61,6 +61,12 @@ namespace Models.BaseForms
 
         protected override void OnActivated(EventArgs e)
         {
+            DisplayAllRecords();
+            base.OnActivated(e);
+        }
+
+        private void DisplayAllRecords()
+        {
             if (ExcludedColumns.Length > 0)
             {
                 ShowAllRecords(ExcludedColumns);
@@ -69,32 +75,31 @@ namespace Models.BaseForms
             {
                 ShowAllRecords();
             }
-
-            base.OnActivated(e);
         }
 
         public void ShowAllRecords()
         {
             List<T> recordList = _recordManager.GetAllRecords();
-            bindDataAndDispalyRecordCount(recordList);
+            bindDataAndDisplayRecordCount(recordList);
         }
 
         public void ShowAllRecords(string[] excludeColumns)
         {
             List<T> recordList = _recordManager.GetAllRecords();
-            bindDataAndDispalyRecordCount(recordList);
+            bindDataAndDisplayRecordCount(recordList);
             removeColumns(excludeColumns);
         }
 
         protected virtual void resetBtn_Click(object sender, EventArgs e)
         {
-            ShowAllRecords();
+            DisplayAllRecords();
         }
 
-        private void bindDataAndDispalyRecordCount(List<T> recordList)
+        private void bindDataAndDisplayRecordCount(List<T> recordList)
         {
             baseGridView.DataSource = recordList;
-            shownRecordsLbl.Text = String.Format("{0} records shown", recordList.Count);
+            shownRecordsLbl.Text = String.Format("{0} of {1} records shown", 
+                recordList.Count, _recordManager.TotalRecordCount);
         }
 
         private void removeColumns(string[] excludeColumns)
@@ -107,13 +112,13 @@ namespace Models.BaseForms
 
         public void ShowFilteredRecords(string[] excludeColumns, List<T> recordList)
         {
-            bindDataAndDispalyRecordCount(recordList);
+            bindDataAndDisplayRecordCount(recordList);
             removeColumns(excludeColumns);
         }
 
         public void ShowFilteredRecords(List<T> recordList)
         {
-            bindDataAndDispalyRecordCount(recordList);
+            bindDataAndDisplayRecordCount(recordList);
         }
 
         private void addRecordBtn_Click(object sender, EventArgs e)

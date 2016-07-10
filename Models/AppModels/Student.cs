@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TeacherTools.Utils;
@@ -24,6 +25,10 @@ namespace Models.AppModels
         [DisplayName("Last Name")]
         public string LastName { get; set; }
 
+        public string Gender { get; set; }
+        [DisplayName("Birth Date")]
+        public DateTime BirthDate { get; set; }
+
         public Name Name
         {
             get
@@ -38,7 +43,7 @@ namespace Models.AppModels
         }
 
         public Student(string studentNumber, string firstName, string lastName,
-            string middleName, int gradeLevel, string section)
+            string middleName, int gradeLevel, string section, string gender, DateTime birthDate)
         {
             StudentNumber = studentNumber;
             FirstName = firstName;
@@ -46,6 +51,8 @@ namespace Models.AppModels
             MiddleName = middleName;
             GradeLevel = gradeLevel;
             Section = section;
+            Gender = gender;
+            BirthDate = birthDate;
         }
 
         public Student(Name studentName, int gradeLevel, string section)

@@ -32,7 +32,7 @@
             this.studentListMenuDesc = new System.Windows.Forms.Label();
             this.studentsListMenuBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.classListMenuBtn = new System.Windows.Forms.Button();
+            this.classRecordMenuBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // studentListMenuDesc
@@ -72,22 +72,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Manage class lists.\r\nSearch, Add, Edit, Delete class lists";
             // 
-            // classListMenuBtn
+            // classRecordMenuBtn
             // 
-            this.classListMenuBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.classListMenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.classListMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classListMenuBtn.Image = ((System.Drawing.Image)(resources.GetObject("classListMenuBtn.Image")));
-            this.classListMenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.classListMenuBtn.Location = new System.Drawing.Point(12, 104);
-            this.classListMenuBtn.Name = "classListMenuBtn";
-            this.classListMenuBtn.Size = new System.Drawing.Size(267, 77);
-            this.classListMenuBtn.TabIndex = 5;
-            this.classListMenuBtn.Text = "Class List";
-            this.classListMenuBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.classListMenuBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.classListMenuBtn.UseVisualStyleBackColor = false;
-            this.classListMenuBtn.Click += new System.EventHandler(this.classListMenuBtn_Click);
+            this.classRecordMenuBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.classRecordMenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.classRecordMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classRecordMenuBtn.Image = ((System.Drawing.Image)(resources.GetObject("classRecordMenuBtn.Image")));
+            this.classRecordMenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.classRecordMenuBtn.Location = new System.Drawing.Point(12, 104);
+            this.classRecordMenuBtn.Name = "classRecordMenuBtn";
+            this.classRecordMenuBtn.Size = new System.Drawing.Size(267, 77);
+            this.classRecordMenuBtn.TabIndex = 5;
+            this.classRecordMenuBtn.Text = "Class Record";
+            this.classRecordMenuBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.classRecordMenuBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.classRecordMenuBtn.UseVisualStyleBackColor = false;
+            this.classRecordMenuBtn.Click += new System.EventHandler(this.classRecordMenuBtn_Click);
             // 
             // MainMenuScreen
             // 
@@ -95,7 +95,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 395);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.classListMenuBtn);
+            this.Controls.Add(this.classRecordMenuBtn);
             this.Controls.Add(this.studentListMenuDesc);
             this.Controls.Add(this.studentsListMenuBtn);
             this.Cursor = System.Windows.Forms.Cursors.Arrow;
@@ -111,7 +111,7 @@
         private System.Windows.Forms.Label studentListMenuDesc;
         private System.Windows.Forms.Button studentsListMenuBtn;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button classListMenuBtn;
+        private System.Windows.Forms.Button classRecordMenuBtn;
 
 
     }
