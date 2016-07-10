@@ -1,59 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using TeacherTools.Forms;
-using TeacherTools.Models;
+using Models.AppModels;
+using Models.Repositories;
 using TeacherTools.Utils;
 
 namespace TeacherTools.Repositories
 {
-    public class StudentManager //: IRecordManager<Student>
+    public class StudentManager : BaseManager<Student>
     {
-        private readonly IRepository<Student> _studentRepository;
-
-        public StudentManager(IRepository<Student> studentRepository)
+        public StudentManager(IRepository<Student> studentRepository) 
+            : base(studentRepository)
         {
-            _studentRepository = studentRepository;
-        }
-
-        public void AddStudent(Student student)
-        {
-            _studentRepository.Add(student);
-        }
-
-        public void UpdateStudentDetails(Student student)
-        {
-            _studentRepository.Update(student);
-        }
-
-        //public void Add(Student entity)
-        //{
-        //    _studentRepository.Add(entity);
-        //}
-
-        //public void Update(Student entity)
-        //{
-        //    _studentRepository.Update(entity);
-        //}
-
-        //public void Delete(Student entity)
-        //{
-        //    _studentRepository.Delete(entity);
-        //}
-
-        public void Delete(Student student)
-        {
-            _studentRepository.Delete(student);
-        }
-
-        public List<Student> GetAllRecords()
-        {
-            return _studentRepository.GetAll();
+            
         }
 
         public Student SearchByStudentNumber(string studentNumber)
         {
-            return _studentRepository.GetByIdentifier(studentNumber);
+            return Repository.GetByIdentifier(studentNumber);
         }
         
         public List<Student> SearchByProfile(Student student)
@@ -83,7 +47,7 @@ namespace TeacherTools.Repositories
         {
 
             List<Student> searchResults =
-                _studentRepository.GetAll().Where(s => isSubstringFound(name.FirstName, s.Name.FirstName)
+                Repository.GetAll().Where(s => isSubstringFound(name.FirstName, s.Name.FirstName)
                                                        && isSubstringFound(name.MiddleName, s.Name.MiddleName)
                                                        && isSubstringFound(name.LastName, s.Name.LastName)).ToList();
 
@@ -101,12 +65,6 @@ namespace TeacherTools.Repositories
 
             return false;
         }
-
-        public List<Student> GetAllStudents()
-        {
-            return _studentRepository.GetAll();
-        }
-
         
 
     }

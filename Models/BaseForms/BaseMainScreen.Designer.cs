@@ -1,6 +1,6 @@
-﻿namespace TeacherTools.Forms
+﻿namespace Models.BaseForms
 {
-    partial class BaseMainScreen<T>
+    partial class BaseMainScreen<T> where T : class
     {
         /// <summary>
         /// Required designer variable.
@@ -55,6 +55,7 @@
             this.editRecordBtn.TabIndex = 13;
             this.editRecordBtn.Text = "Edit...";
             this.editRecordBtn.UseVisualStyleBackColor = true;
+            this.editRecordBtn.Click += new System.EventHandler(this.editRecordBtn_Click);
             // 
             // showAllRecordsBtn
             // 
@@ -75,6 +76,7 @@
             this.deleteRecordBtn.TabIndex = 11;
             this.deleteRecordBtn.Text = "Delete Record";
             this.deleteRecordBtn.UseVisualStyleBackColor = true;
+            this.deleteRecordBtn.Click += new System.EventHandler(this.deleteRecordBtn_Click);
             // 
             // addRecordBtn
             // 
@@ -85,6 +87,7 @@
             this.addRecordBtn.TabIndex = 10;
             this.addRecordBtn.Text = "Add...";
             this.addRecordBtn.UseVisualStyleBackColor = true;
+            this.addRecordBtn.Click += new System.EventHandler(this.addRecordBtn_Click);
             // 
             // baseGridView
             // 
@@ -117,7 +120,7 @@
             this.Controls.Add(this.addRecordBtn);
             this.Controls.Add(this.baseGridView);
             this.Name = "BaseMainScreen";
-            this.Text = "BaseMainScreen";
+            this.Text = "List Screen";
             ((System.ComponentModel.ISupportInitialize)(this.baseGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

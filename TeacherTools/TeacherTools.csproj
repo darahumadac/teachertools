@@ -54,20 +54,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Forms\BaseMainScreen.cs">
+    <Compile Include="Forms\StudentMainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\BaseMainScreen.Designer.cs">
-      <DependentUpon>BaseMainScreen.cs</DependentUpon>
+    <Compile Include="Forms\StudentMainScreen.Designer.cs">
+      <DependentUpon>StudentMainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClassListScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\ClassListScreen.Designer.cs">
-      <DependentUpon>ClassListScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\IMainView.cs" />
-    <Compile Include="Forms\IRecordManager.cs" />
     <Compile Include="Forms\StudentInfoScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,31 +72,24 @@
     <Compile Include="Forms\MainMenuScreen.Designer.cs">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Temp_InheritedForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Temp_InheritedForm.Designer.cs">
+      <DependentUpon>Temp_InheritedForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201607030315583_RemovedNameEncapsulation.cs" />
     <Compile Include="Migrations\201607030315583_RemovedNameEncapsulation.Designer.cs">
       <DependentUpon>201607030315583_RemovedNameEncapsulation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\DataRepository.cs" />
     <Compile Include="TeacherToolsResource.en.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TeacherToolsResource.en.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils\GlobalConstants.cs" />
-    <Compile Include="Utils\InputValidator.cs" />
     <Compile Include="Migrations\201606211224032_Added Name Field.cs" />
     <Compile Include="Migrations\201606211224032_Added Name Field.Designer.cs">
       <DependentUpon>201606211224032_Added Name Field.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Name.cs" />
-    <Compile Include="Forms\StudentScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\StudentScreen.Designer.cs">
-      <DependentUpon>StudentScreen.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Repositories\IRepository.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="Migrations\201606160901269_InitialCreate.cs" />
     <Compile Include="Migrations\201606160901269_InitialCreate.Designer.cs">
@@ -118,24 +103,22 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\SqlRepository.cs" />
-    <Compile Include="Models\Student.cs" />
     <Compile Include="Repositories\StudentManager.cs" />
-    <Compile Include="Models\Subject.cs" />
     <Compile Include="Repositories\TeacherToolsDbContext.cs" />
-    <EmbeddedResource Include="Forms\BaseMainScreen.resx">
-      <DependentUpon>BaseMainScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StudentInfoScreen.resx">
       <DependentUpon>StudentInfoScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainMenuScreen.resx">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentMainScreen.resx">
+      <DependentUpon>StudentMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Temp_InheritedForm.resx">
+      <DependentUpon>Temp_InheritedForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606211224032_Added Name Field.resx">
       <DependentUpon>201606211224032_Added Name Field.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\StudentScreen.resx">
-      <DependentUpon>StudentScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201606160901269_InitialCreate.resx">
       <DependentUpon>201606160901269_InitialCreate.cs</DependentUpon>
@@ -178,6 +161,17 @@
     <Content Include="img\Student-100px.png" />
     <Content Include="img\Student-50px.png" />
     <Content Include="img\Student.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{5CD678D3-AD4C-4F66-8960-2FA497EC6BD1}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{6C34819F-8E39-4488-B824-F5AA64B19E2B}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

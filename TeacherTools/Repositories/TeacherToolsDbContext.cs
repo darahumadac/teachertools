@@ -1,5 +1,5 @@
 using System.Data.Entity;
-using TeacherTools.Models;
+using Models.AppModels;
 
 namespace TeacherTools.Repositories
 {

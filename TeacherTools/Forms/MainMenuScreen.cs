@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Resources;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Models.AppModels;
+using Models.Repositories;
 using TeacherTools.Repositories;
 
 namespace TeacherTools.Forms
@@ -20,17 +24,22 @@ namespace TeacherTools.Forms
 
             InitializeComponent();
 
-
         }
 
         private void studentsListMenuBtn_Click(object sender, EventArgs e)
         {
-            StudentScreen studentModuleScreen = new StudentScreen(_appRepository, _resource);
-            studentModuleScreen.Show();
+            IRepository<Student> studentRepository = _appRepository;
+            StudentManager studentManager = new StudentManager(studentRepository);
+
+            StudentMainScreen studentMainScreen =
+                new StudentMainScreen(_resource, studentManager, typeof(StudentInfoScreen));
+
+            studentMainScreen.Show();
         }
 
         private void classListMenuBtn_Click(object sender, EventArgs e)
         {
+
         }
     }
 }

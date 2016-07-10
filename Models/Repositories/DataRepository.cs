@@ -1,4 +1,4 @@
-﻿namespace TeacherTools.Repositories
+﻿namespace Models.Repositories
 {
     //public class DataRepository<T> where T : class
     //{

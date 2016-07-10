@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
-using TeacherTools.Models;
+using Models.AppModels;
+using Models.Repositories;
 
 namespace TeacherTools.Repositories
 {

@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Models.AppModels;
 using NUnit.Framework;
-using TeacherTools.Models;
 using TeacherTools.Repositories;
 
 namespace TeacherTools.Tests

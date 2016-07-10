@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using TeacherTools.Models;
+using Models.AppModels;
 using TeacherTools.Repositories;
 
 namespace TeacherTools.Migrations

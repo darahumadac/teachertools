@@ -1,6 +1,6 @@
 using System;
 
-namespace TeacherTools.Models
+namespace Models.AppModels
 {
     public class Name
     {

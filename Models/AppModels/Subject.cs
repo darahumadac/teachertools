@@ -1,4 +1,4 @@
-﻿namespace TeacherTools.Models
+﻿namespace Models.AppModels
 {
     public class Subject
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TeacherTools.Repositories
+namespace Models.Repositories
 {
     public interface IRepository<T> where T : class
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace TeacherTools.Forms
+namespace Models.Repositories
 {
     public interface IMainView<T>
     {
@@ -9,7 +9,7 @@ namespace TeacherTools.Forms
         void ShowFilteredRecords(string[] excludeColumns, List<T> recordList);
         void ShowFilteredRecords(List<T> recordList);
         void AddRecord();
-        void EditRecord();
-        void DeleteRecord();
+        void EditSelectedRecord();
+        void DeleteSelectedRecord();
     }
 }

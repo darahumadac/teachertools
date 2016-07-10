@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
-using TeacherTools.Models;
+using Models.AppModels;
 using TeacherTools.Properties;
 using TeacherTools.Repositories;
 using TeacherTools.Utils;
@@ -22,24 +22,25 @@ namespace TeacherTools.Forms
     public partial class StudentInfoScreen : Form
     {
         private readonly StudentManager _studentManager;
-        private readonly StudentScreen _studentScreen;
+        private readonly StudentMainScreen _studentScreen;
         private readonly ResourceManager _resource;
         private readonly FormViewMode _formViewMode;
         private int _validInputCount;
         private Student _student;
         
 
-        public StudentInfoScreen(StudentManager studentManager, StudentScreen studentScreen, ResourceManager resource)
+        public StudentInfoScreen(StudentManager studentManager, StudentMainScreen studentScreen, ResourceManager resource)
         {
             _studentManager = studentManager;
             _studentScreen = studentScreen;
             _resource = resource;
             _formViewMode = FormViewMode.Insert;
+
             InitializeComponent();
                 
         }
 
-        public StudentInfoScreen(StudentManager studentManager, StudentScreen studentScreen, ResourceManager resource, Student selectedStudent)
+        public StudentInfoScreen(StudentManager studentManager, StudentMainScreen studentScreen, ResourceManager resource, Student selectedStudent)
         {
             _studentManager = studentManager;
             _studentScreen = studentScreen;
@@ -50,7 +51,7 @@ namespace TeacherTools.Forms
 
             InitializeEditStudentScreen();
             InitializeStudentInfo(_student);
-            
+
         }
 
         private void InitializeEditStudentScreen()
@@ -126,7 +127,7 @@ namespace TeacherTools.Forms
         {
             try
             {
-                _studentManager.AddStudent(student);
+                _studentManager.Add(student);
                 _studentScreen.Activate();
                 Dispose();
             }
@@ -142,7 +143,7 @@ namespace TeacherTools.Forms
         {
             try
             {
-                _studentManager.UpdateStudentDetails(student);
+                _studentManager.Update(student);
                 MessageBox.Show(_resource.GetString("EditStudentSuccessMsg"),
                     _resource.GetString("EditStudentSuccessCaption"),
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -216,8 +217,8 @@ namespace TeacherTools.Forms
             Dispose();
         }
 
+
         
-
-
     }
+
 }

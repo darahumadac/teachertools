@@ -1,10 +1,9 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using TeacherTools.Utils;
 
-namespace TeacherTools.Models
+namespace Models.AppModels
 {
     public class Student
     {

@@ -70,9 +70,17 @@
     <Compile Include="InputValidatorShould.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{5CD678D3-AD4C-4F66-8960-2FA497EC6BD1}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TeacherTools\TeacherTools.csproj">
       <Project>{3D9362C9-8056-456F-9D49-7BD14A51C52D}</Project>
       <Name>TeacherTools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Util\Util.csproj">
+      <Project>{6C34819F-8E39-4488-B824-F5AA64B19E2B}</Project>
+      <Name>Util</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
