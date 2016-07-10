@@ -41,5 +41,16 @@ namespace TeacherTools.Forms
         {
 
         }
+
+        private void subjectMenuBtn_Click(object sender, EventArgs e)
+        {
+            IRepository<Subject> subjectRepository = _appRepository;
+            SubjectManager subjectManager = new SubjectManager(subjectRepository);
+
+            SubjectMainScreen subjectMainScreen =
+                new SubjectMainScreen(_resource, subjectManager, typeof(SubjectInfoScreen));
+
+            subjectMainScreen.Show();
+        }
     }
 }

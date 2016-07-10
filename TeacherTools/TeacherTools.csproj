@@ -72,6 +72,19 @@
     <Compile Include="Forms\MainMenuScreen.Designer.cs">
       <DependentUpon>MainMenuScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SubjectInfoScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectInfoScreen.Designer.cs">
+      <DependentUpon>SubjectInfoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SubjectMainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SubjectMainScreen.Designer.cs">
+      <DependentUpon>SubjectMainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\SubjectManager.cs" />
     <Compile Include="Forms\Temp_InheritedForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +98,10 @@
     <Compile Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.cs" />
     <Compile Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.Designer.cs">
       <DependentUpon>201607100658120_AddGenderAndBirthdateForStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607100849133_SubjectModuleClasses.cs" />
+    <Compile Include="Migrations\201607100849133_SubjectModuleClasses.Designer.cs">
+      <DependentUpon>201607100849133_SubjectModuleClasses.cs</DependentUpon>
     </Compile>
     <Compile Include="TeacherToolsResource.en.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -118,6 +135,12 @@
     <EmbeddedResource Include="Forms\StudentMainScreen.resx">
       <DependentUpon>StudentMainScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubjectInfoScreen.resx">
+      <DependentUpon>SubjectInfoScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SubjectMainScreen.resx">
+      <DependentUpon>SubjectMainScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Temp_InheritedForm.resx">
       <DependentUpon>Temp_InheritedForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607100658120_AddGenderAndBirthdateForStudent.resx">
       <DependentUpon>201607100658120_AddGenderAndBirthdateForStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607100849133_SubjectModuleClasses.resx">
+      <DependentUpon>201607100849133_SubjectModuleClasses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

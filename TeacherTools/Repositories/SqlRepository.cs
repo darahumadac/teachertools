@@ -8,7 +8,7 @@ using Models.Repositories;
 
 namespace TeacherTools.Repositories
 {
-    public class SqlRepository : DataRepository, IRepository<Student>, IRepository<Subject>
+    public class SqlRepository : DataRepository, IRepository<Student>, IRepository<Models.AppModels.Subject>
     {
         private readonly TeacherToolsDbContext _appDbContext;
 
@@ -50,27 +50,35 @@ namespace TeacherTools.Repositories
 
         public void Add(Subject entity)
         {
-            throw new NotImplementedException();
+            _appDbContext.Subjects.Add(entity);
+            _appDbContext.SaveChanges();
         }
 
         public void Update(Subject entity)
         {
-            throw new NotImplementedException();
+            _appDbContext.Entry(entity).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
         }
 
         public void Delete(Subject entity)
         {
-            throw new NotImplementedException();
+            _appDbContext.Subjects.Remove(entity);
+            _appDbContext.SaveChanges();
         }
 
         List<Subject> IRepository<Subject>.GetAll()
         {
-            throw new NotImplementedException();
+            return _appDbContext.Subjects.ToList();
         }
 
-        Subject IRepository<Subject>.GetByIdentifier(string numberOrCode)
+        List<Subject> IRepository<Subject>.GetByIdentifier(string subjectName)
         {
-            throw new NotImplementedException();
+            List<Subject> searchResult = 
+                _appDbContext.Subjects.Where(
+                    s => s.SubjectName.Equals(subjectName, 
+                        StringComparison.InvariantCultureIgnoreCase)).ToList();
+
+            return searchResult;
         }
 
         public List<Student> GetAll()
@@ -78,16 +86,20 @@ namespace TeacherTools.Repositories
             return _appDbContext.Students.ToList();
         }
 
-        public Student GetByIdentifier(string numberOrCode)
+        public List<Student> GetByIdentifier(string studentNumber)
         {
-            var student = _appDbContext.Students.FirstOrDefault(s => s.StudentNumber == numberOrCode);
+            List<Student> searchResult = new List<Student>();
+            var student = _appDbContext.Students.FirstOrDefault(s => s.StudentNumber == studentNumber);
 
             if (student != null)
             {
-                return student;
+                searchResult.Add(student);
             }
-
-            return new Student();
+            else
+            {
+                searchResult.Add(new Student());
+            }
+            return searchResult;
         }
 
     }

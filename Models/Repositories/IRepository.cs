@@ -8,6 +8,6 @@ namespace Models.Repositories
         void Update(T entity);
         void Delete(T entity);
         List<T> GetAll();
-        T GetByIdentifier(string numberOrCode);
+        List<T> GetByIdentifier(string numberOrCode);
     }
 }

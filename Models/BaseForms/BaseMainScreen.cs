@@ -61,38 +61,20 @@ namespace Models.BaseForms
 
         protected override void OnActivated(EventArgs e)
         {
-            DisplayAllRecords();
+            ShowAllRecords();
             base.OnActivated(e);
-        }
-
-        private void DisplayAllRecords()
-        {
-            if (ExcludedColumns.Length > 0)
-            {
-                ShowAllRecords(ExcludedColumns);
-            }
-            else
-            {
-                ShowAllRecords();
-            }
         }
 
         public void ShowAllRecords()
         {
             List<T> recordList = _recordManager.GetAllRecords();
             bindDataAndDisplayRecordCount(recordList);
-        }
-
-        public void ShowAllRecords(string[] excludeColumns)
-        {
-            List<T> recordList = _recordManager.GetAllRecords();
-            bindDataAndDisplayRecordCount(recordList);
-            removeColumns(excludeColumns);
+            removeColumns(ExcludedColumns);
         }
 
         protected virtual void resetBtn_Click(object sender, EventArgs e)
         {
-            DisplayAllRecords();
+            ShowAllRecords();
         }
 
         private void bindDataAndDisplayRecordCount(List<T> recordList)
@@ -110,15 +92,10 @@ namespace Models.BaseForms
             }
         }
 
-        public void ShowFilteredRecords(string[] excludeColumns, List<T> recordList)
-        {
-            bindDataAndDisplayRecordCount(recordList);
-            removeColumns(excludeColumns);
-        }
-
         public void ShowFilteredRecords(List<T> recordList)
         {
             bindDataAndDisplayRecordCount(recordList);
+            removeColumns(ExcludedColumns);
         }
 
         private void addRecordBtn_Click(object sender, EventArgs e)
@@ -171,6 +148,43 @@ namespace Models.BaseForms
                     _resource.GetString("DeleteSuccessCaption"),
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        protected void ResetFormControls(GroupBox groupBoxContainer, Type typeOfControl)
+        {
+            List<Control> controlsToReset = GetControlsFromContainer(groupBoxContainer, typeOfControl);
+
+            foreach (Control control in controlsToReset)
+            {
+                control.ResetText();
+            }
+        }
+
+        protected void ResetFormControls(GroupBox groupBoxContainer, Type typeOfControl, string defaultValue)
+        {
+            List<Control> controlsToReset = GetControlsFromContainer(groupBoxContainer, typeOfControl);
+
+            foreach (Control control in controlsToReset)
+            {
+                control.ResetText();
+                control.Text = defaultValue;
+            }
+        }
+
+        protected List<Control> GetControlsFromContainer(GroupBox groupBoxContainer, Type typeOfControl)
+        {
+            List<Control> controls = new List<Control>();
+
+            foreach (Control control in groupBoxContainer.Controls)
+            {
+                Type controlType = control.GetType();
+                if (controlType == typeOfControl)
+                {
+                    controls.Add(control);
+                }
+            }
+
+            return controls;
         }
     }
 

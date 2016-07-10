@@ -33,6 +33,8 @@
             this.studentsListMenuBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.classRecordMenuBtn = new System.Windows.Forms.Button();
+            this.subjectMenuBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // studentListMenuDesc
@@ -54,7 +56,7 @@
             this.studentsListMenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.studentsListMenuBtn.Location = new System.Drawing.Point(12, 12);
             this.studentsListMenuBtn.Name = "studentsListMenuBtn";
-            this.studentsListMenuBtn.Size = new System.Drawing.Size(267, 76);
+            this.studentsListMenuBtn.Size = new System.Drawing.Size(328, 76);
             this.studentsListMenuBtn.TabIndex = 3;
             this.studentsListMenuBtn.Text = "Students";
             this.studentsListMenuBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -66,11 +68,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
-            this.label1.Location = new System.Drawing.Point(100, 134);
+            this.label1.Location = new System.Drawing.Point(100, 216);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 26);
+            this.label1.Size = new System.Drawing.Size(189, 26);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Manage class lists.\r\nSearch, Add, Edit, Delete class lists";
+            this.label1.Text = "Manage Class Records.\r\nSearch, Add, Edit, Delete class records";
             // 
             // classRecordMenuBtn
             // 
@@ -79,9 +81,9 @@
             this.classRecordMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classRecordMenuBtn.Image = ((System.Drawing.Image)(resources.GetObject("classRecordMenuBtn.Image")));
             this.classRecordMenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.classRecordMenuBtn.Location = new System.Drawing.Point(12, 104);
+            this.classRecordMenuBtn.Location = new System.Drawing.Point(12, 186);
             this.classRecordMenuBtn.Name = "classRecordMenuBtn";
-            this.classRecordMenuBtn.Size = new System.Drawing.Size(267, 77);
+            this.classRecordMenuBtn.Size = new System.Drawing.Size(328, 79);
             this.classRecordMenuBtn.TabIndex = 5;
             this.classRecordMenuBtn.Text = "Class Record";
             this.classRecordMenuBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -89,11 +91,41 @@
             this.classRecordMenuBtn.UseVisualStyleBackColor = false;
             this.classRecordMenuBtn.Click += new System.EventHandler(this.classRecordMenuBtn_Click);
             // 
+            // subjectMenuBtn
+            // 
+            this.subjectMenuBtn.BackColor = System.Drawing.SystemColors.Control;
+            this.subjectMenuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.subjectMenuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subjectMenuBtn.Image = ((System.Drawing.Image)(resources.GetObject("subjectMenuBtn.Image")));
+            this.subjectMenuBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subjectMenuBtn.Location = new System.Drawing.Point(12, 94);
+            this.subjectMenuBtn.Name = "subjectMenuBtn";
+            this.subjectMenuBtn.Size = new System.Drawing.Size(328, 85);
+            this.subjectMenuBtn.TabIndex = 6;
+            this.subjectMenuBtn.Text = "Subjects / Requirements";
+            this.subjectMenuBtn.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.subjectMenuBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.subjectMenuBtn.UseVisualStyleBackColor = false;
+            this.subjectMenuBtn.Click += new System.EventHandler(this.subjectMenuBtn_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F);
+            this.label2.Location = new System.Drawing.Point(100, 125);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(207, 26);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Manage Subjects and its Requirements.\r\nAdd, Edit, and Delete subject requirements" +
+    "";
+            // 
             // MainMenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 395);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.subjectMenuBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.classRecordMenuBtn);
             this.Controls.Add(this.studentListMenuDesc);
@@ -112,6 +144,8 @@
         private System.Windows.Forms.Button studentsListMenuBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button classRecordMenuBtn;
+        private System.Windows.Forms.Button subjectMenuBtn;
+        private System.Windows.Forms.Label label2;
 
 
     }

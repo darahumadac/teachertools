@@ -79,7 +79,7 @@ namespace TeacherTools.Forms
 
                 }
 
-                ShowFilteredRecords(ExcludedColumns, studentResult);
+                ShowFilteredRecords(studentResult);
                 
             }
         }
@@ -96,48 +96,11 @@ namespace TeacherTools.Forms
             ResetStudentInfoSearchControls();
         }
 
-        private void ResetFormControls(GroupBox groupBoxContainer, Type typeOfControl)
-        {
-            List<Control> controlsToReset = GetControlsFromContainer(groupBoxContainer, typeOfControl);
-
-            foreach (Control control in controlsToReset)
-            {
-                control.ResetText();
-            }
-        }
-
-        private void ResetFormControls(GroupBox groupBoxContainer, Type typeOfControl, string defaultValue)
-        {
-            List<Control> controlsToReset = GetControlsFromContainer(groupBoxContainer, typeOfControl);
-
-            foreach (Control control in controlsToReset)
-            {
-                control.ResetText();
-                control.Text = defaultValue;
-            }
-        }
-
         private void ResetStudentInfoSearchControls()
         {
             ResetFormControls(studentNameSearchGroupBox, typeof(TextBox));
             ResetFormControls(batchInfoSearchGroupBox, typeof(NumericUpDown), gradeLevelNum.Minimum.ToString());
             ResetFormControls(batchInfoSearchGroupBox, typeof(TextBox));
-        }
-
-        private List<Control> GetControlsFromContainer(GroupBox groupBoxContainer, Type typeOfControl)
-        {
-            List<Control> controls = new List<Control>();
-
-            foreach (Control control in groupBoxContainer.Controls)
-            {
-                Type controlType = control.GetType();
-                if (controlType == typeOfControl)
-                {
-                    controls.Add(control);
-                }
-            }
-
-            return controls;
         }
 
         private void studentNoTxt_TextChanged(object sender, EventArgs e)

@@ -68,6 +68,7 @@
     <Compile Include="SqlRepositoryShould.cs" />
     <Compile Include="StudentManagerShould.cs" />
     <Compile Include="InputValidatorShould.cs" />
+    <Compile Include="SubjectManagerShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">

@@ -33,6 +33,16 @@ namespace TeacherTools.Migrations
                     );
             }
 
+            for (int i = 1; i <= 3; i++)
+            {
+                context.Subjects.AddOrUpdate(
+                    new Subject("Subject " + i,
+                        new Teacher(i + "Teacher", "Test", "Teacher"),
+                        new ClassInformation(i, "Section " + i)
+                    )
+                );
+            }
+
            
         }
     }

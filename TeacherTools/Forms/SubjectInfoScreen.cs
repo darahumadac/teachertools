@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Models.BaseForms
+namespace TeacherTools.Forms
 {
-    public partial class Temp_BaseForm : Form
+    public partial class SubjectInfoScreen : Form
     {
-        public Temp_BaseForm()
+        public SubjectInfoScreen()
         {
             InitializeComponent();
         }

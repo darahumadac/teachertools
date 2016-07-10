@@ -50,9 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppModels\ClassInformation.cs" />
     <Compile Include="AppModels\Name.cs" />
+    <Compile Include="AppModels\Requirement.cs" />
     <Compile Include="AppModels\Student.cs" />
     <Compile Include="AppModels\Subject.cs" />
+    <Compile Include="AppModels\SubjectRequirement.cs" />
+    <Compile Include="AppModels\Teacher.cs" />
     <Compile Include="BaseForms\BaseMainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,10 +82,6 @@
     <EmbeddedResource Include="BaseForms\Temp_BaseForm.resx">
       <DependentUpon>Temp_BaseForm.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Util\Util.csproj">

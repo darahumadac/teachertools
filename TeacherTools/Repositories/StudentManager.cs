@@ -17,7 +17,7 @@ namespace TeacherTools.Repositories
 
         public Student SearchByStudentNumber(string studentNumber)
         {
-            return Repository.GetByIdentifier(studentNumber);
+            return Repository.GetByIdentifier(studentNumber).First();
         }
         
         public List<Student> SearchByProfile(Student student)
@@ -47,25 +47,13 @@ namespace TeacherTools.Repositories
         {
 
             List<Student> searchResults =
-                Repository.GetAll().Where(s => isSubstringFound(name.FirstName, s.Name.FirstName)
-                                                       && isSubstringFound(name.MiddleName, s.Name.MiddleName)
-                                                       && isSubstringFound(name.LastName, s.Name.LastName)).ToList();
+                Repository.GetAll().Where(s 
+                    => InputValidator.IsSubstringFound(name.FirstName, s.Name.FirstName)
+                    && InputValidator.IsSubstringFound(name.MiddleName, s.Name.MiddleName)
+                    && InputValidator.IsSubstringFound(name.LastName, s.Name.LastName)).ToList();
 
             return searchResults;
         }
-
-        private bool isSubstringFound(string substring, string searchedString)
-        {
-            int foundIndex = searchedString.IndexOf(substring, StringComparison.OrdinalIgnoreCase);
-
-            if (foundIndex >= 0)
-            {
-                return true;
-            }
-
-            return false;
-        }
-        
 
     }
 

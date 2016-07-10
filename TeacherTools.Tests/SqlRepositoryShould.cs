@@ -108,7 +108,7 @@ namespace TeacherTools.Tests
         [Test]
         public void Return_0_StudentId_When_Searched_StudentNum_Not_Found()
         {
-            var retrievedStudent = _sqlRepository.GetByIdentifier("");
+            var retrievedStudent = _sqlRepository.GetByIdentifier("").First();
             Assert.AreEqual(0, retrievedStudent.StudentId);
         }
 
@@ -117,7 +117,7 @@ namespace TeacherTools.Tests
         {
             var existingStudent = _appDbContext.Students.First();
 
-            var retrievedStudent = _sqlRepository.GetByIdentifier(existingStudent.StudentNumber);
+            var retrievedStudent = _sqlRepository.GetByIdentifier(existingStudent.StudentNumber).First();
             Assert.AreNotEqual(0, retrievedStudent.StudentId);
         }
 
@@ -137,6 +137,19 @@ namespace TeacherTools.Tests
 
             var searchedStudent = _appDbContext.Students.Find(existingStudent.StudentId);
             Assert.IsNull(searchedStudent);
+        }
+
+        [Test]
+        public void Add_Subject_To_Database()
+        {
+            Teacher teacher = _appDbContext.Teachers.First();
+            ClassInformation classInformation = _appDbContext.Classes.First();
+            var newSubject = new Subject("Subject Test", teacher, classInformation);
+              
+            _sqlRepository.Add(newSubject);
+
+            var retrievedSubject = _appDbContext.Subjects.FirstOrDefault(s => s.SubjectId == newSubject.SubjectId);
+            Assert.NotNull(retrievedSubject);
         }
 
     }
